@@ -5,10 +5,11 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
 
+import net.twonibbles.util.*;
+
 public class Game extends Canvas implements Runnable{
 
 	private static final long serialVersionUID = 5987684678848531236L;
-	public static final int WIDTH = 640;
 	public static final int HEIGHT = WIDTH / 12 * 9;
 	
 	private Thread thread;
@@ -16,7 +17,7 @@ public class Game extends Canvas implements Runnable{
 	
 	
 	public Game() {
-		new Window(WIDTH, HEIGHT, "Space Game", this);
+		new Window(Constants.Screen.WIDTH, Constants.Screen.HEIGHT, "Space Game", this);
 		
 	}
 	
@@ -73,7 +74,7 @@ public class Game extends Canvas implements Runnable{
 		
 		Graphics g = bs.getDrawGraphics();
 		g.setColor(Color.green);
-		g.fillRect(0, 0, WIDTH, HEIGHT);
+		g.fillRect(0, 0, Constants.Screen.WIDTH, Constants.Screen.HEIGHT);
 		g.dispose();
 		bs.show();
 		
